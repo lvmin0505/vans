@@ -1,0 +1,1378 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>注册页面</title>
+	<link rel="stylesheet" href="./css/common.css">
+	<link rel="stylesheet" href="./font-awesome-4.7.0/css/font-awesome.css">
+	<style>
+		.container{
+			
+		}
+		.email {
+			letter-spacing: 0;
+		}
+		.header{
+			height: 150px;
+			width: 100%;
+			background-color: #fff;
+		}
+		.wrap{
+			width: 1200px;
+			margin:0 auto;
+		}
+		.header-top{
+			height: 50px;
+			width: 100%;
+		}
+		.header-top::after{
+			content: "";
+			display: block;
+			clear:both;
+		}
+		.header-top > div {
+			font-size: 15px;
+		}
+		.header-top a {
+			color: #d2d2d2;
+		}
+		.header-top a:hover {
+			color: #d6000f;
+		}
+		.top-and{
+			height: 50px;
+			width: 860px;
+			float: right;
+		}
+		.top-and::after {
+			content: "";
+			display: block;
+			clear: both;
+		}
+		.top-1 {
+			float: left;
+		}
+		.top-1 > ul {
+			width: 130px;
+			height: 50px;
+		}
+		.top-1 > ul::after {
+			content: "";
+			display: block;
+			clear: both;
+		}
+		.top-1 > ul > li {
+			float: left;
+			line-height: 50px;
+			text-align: center;
+		}
+		.top-1  .one {
+			background: url("./image/personal.png") no-repeat 0 3px;
+			background-size: 20px auto;
+			padding: 2px 0 0 20px;
+		}
+		
+		.top-1 .two {
+			background: url("./image/line.png") no-repeat 0 3px;
+			background-size: 20px auto;
+			padding: 2px 0 0 20px;
+		}
+		.top-2 {
+			width: 120px;
+			height: 50px;
+			float: left;
+		}
+		.top-2 > ul > li {
+			line-height: 50px;
+			text-align: center;
+			padding-right: 15px;
+			background: url("./image/down.png") no-repeat right center;
+			background-size: 12px;
+		}
+		.top-2 .one {
+			background: url("./image/car.png") no-repeat 0 3px;
+			background-size: 18px auto;
+			padding: 2px 0 0 20px;
+		}
+		.top-2 > ul > li {
+			position: relative;
+		}
+		.top-2 > ul > li:hover .tip {
+			display: block;
+		}
+		.top-2 .tip {
+			width: 300px;
+			background-color: #f1f2ed;
+			left: -80px;
+			position: absolute;
+			display: none;
+		}
+		.top-2 .tip .p {
+			padding: 10px 20px 5px 20px;
+			font-weight: bolder;
+			color: gray;
+		}
+		.top-2 .little-box {
+			width: 15px;
+			height: 15px;
+			background-color: #f1f2ed;
+			margin-top: -5px;
+			margin-left: 130px;
+			transform: rotate(45deg);
+		}
+		.top-3 {
+			width: 105px;
+			height: 50px;
+			float: left;
+			margin-left: 15px;
+		}
+		.top-3 > ul > li {
+			line-height: 50px;
+		}
+		.top-3 .one {
+			background: url("./image/heart.png") no-repeat 0 3px;
+			background-size: 18px auto;
+			padding: 2px 0 0 20px;
+		}
+		.top-4 {
+			width: 85px;
+			height: 50px;
+			float: left;
+			margin-left: 15px;
+		}
+		.top-4 > ul > li {
+			line-height: 50px;
+		}
+		.top-4 .one {
+			background: url("./image/location.png") no-repeat 0 3px;
+			background-size: 18px auto;
+			padding: 2px 0 0 20px;
+		}
+		.top-5 {
+			width: 50px;
+			height: 50px;
+			float: left;
+			margin-left: 15px;
+		}
+		.top-5 > ul:nth-child(1) > li {
+			line-height: 50px;
+			background: url("./image/down.png") no-repeat right center;
+			background-size: 18px auto;
+		}
+		.top-5 > ul > li:hover > .two {
+			display: block;
+		}
+		.top-5 .two {
+			width: 200px;
+			height: 200px;
+			position: absolute;
+			margin-left: -150px;
+			overflow-y: scroll;
+			text-align: right;
+			display: none;
+			background-color: #fff;
+		}
+		.top-5 .two > ul > li a {
+			color: #000;
+		}
+		.top-5 .two > ul > li a:hover {
+			color: #d6000f;
+		}
+		.top-6 {
+			width: 220px;
+			height: 45px;
+			float: left;
+			border: 1px solid #d2d2d2;
+			padding: 5px 0;
+			margin-top: 2.5px;
+			box-sizing: border-box;
+			position: relative;
+			margin-left: 15px;
+		}
+		.top-6 > div {
+			height: 35px;
+			line-height: 35px;
+		}
+		.top-6 > .icon {
+			box-sizing: border-box;
+			float: right;
+			width: 35px;
+			text-align: center;
+			font-size: 25px;
+		}
+		.top-6 > .icon a {
+			color: #64686b;
+		}
+		.top-6 .input {
+			width: 185px;
+		}
+		.top-6 .input > input {
+			width: 160px;
+			color: #d2d2d2;
+			font-size: 16px;
+			font-weight: bolder;
+			border: none;
+			padding-left: 1em;
+		}
+		.header-middle{
+			height: 20px;
+			width:100%;
+		}
+		.header-middle::after {
+			content: "";
+			display: block;
+			clear: both;
+		}
+		.word > ul {
+			width: 310px;
+			height: 20px;
+			box-sizing: border-box;
+			float: right;
+			padding: 3px 0;
+		}
+		.word > ul::after {
+			content: "";
+			display: block;
+			clear: both;
+		}
+		.word > ul > li {
+			float: left;
+			width: 50px;
+			font-size: 13px;
+			text-align: center;
+			border-right: 2px solid #d2d2d2;
+		}
+		.word > ul > li a {
+			color: #d2d2d2;
+		}
+		.word > ul > li a:hover {
+			color: #d6000f;
+		}
+		.word > ul > li:nth-child(2) {
+			width: 65px;
+		}
+		.word > ul > li:nth-child(3) {
+			width: 100px;
+			border-right: none;
+		}
+		.header-bottom{
+			height: 80px;
+			width: 100%;
+		}
+		.header-bottom::after{
+			content: "";
+			display: block;
+			clear: both;
+		}
+		.logo{
+			height: 80px;
+			width: 180px;
+			float: left;
+		}
+		.nav{
+			height: 80px;
+			width: 1020px;
+			float: right;
+		}
+		.nav > ul {
+			margin-top: 45px;
+		}
+		.nav > ul::after {
+			content: "";
+			display: block;
+			clear: both;
+		}
+		.nav > ul > li {
+			float: left;
+			line-height: 30px;
+		}
+		.nav > ul > li > a {
+			color: #000;
+			font-size: 16px;
+			font-weight: bolder;
+		}
+		.nav .one {
+			padding: 0 18px 0 13px;
+			background: url("./image/line.png") no-repeat right center;
+		}
+		.nav .one > a {
+			padding-right: 18px;
+			background: url("./image/down2.png") no-repeat right center;
+			background-size: 12px auto;
+		}
+		.nav > ul > li:nth-child(1):hover > a {
+			color: #d6000f;
+			padding-right: 18px;
+			background: url("./image/down3.png") no-repeat right center;
+			background-size: 12px auto;
+		}
+		.nav > ul > li:nth-child(1):hover .tips {
+			display: block;
+		}
+		.nav .tips {
+			position: absolute;
+			background-color: #000;
+			width: 100%;
+			left: 0;
+			text-align: left;
+			display: none;
+			padding: 15px 0;
+		}
+		.nav .tips > ul {
+			margin-left: 350px;
+		}
+		.nav .tips > ul::after {
+			content: "";
+			display: block;
+			clear: both;
+		}
+		.nav .tips > ul > li {
+			float: left;
+			padding: 0 50px 0 10px;
+		}
+		.nav .tips > ul a {
+			color: #fff;
+			font-size: 16px;
+			font-weight: bold;
+		}
+		.nav .two {
+			padding: 0 18px 0 13px;
+			background: url("./image/line.png") no-repeat right center;
+		}
+		.nav .two a {
+			padding-right: 18px;
+			background: url("./image/down2.png") no-repeat right center;
+			background-size: 12px auto;
+		}
+		.nav > ul > li:nth-child(2):hover > a {
+			color: #d6000f;
+			padding-right: 18px;
+			background: url("./image/down3.png") no-repeat right center;
+			background-size: 12px auto;
+		}
+		.nav > ul > li:nth-child(2):hover .tips-2 {
+			display: block;
+		}
+		.nav .tips-2 {
+			position: absolute;
+			background-color: #000;
+			width: 100%;
+			left: 0;
+			text-align: left;
+			display: none;
+			padding: 15px 0;
+		}
+		.nav .tips-2 > ul {
+			margin-left: 450px;
+		}
+		.nav .tips-2 > ul::after {
+			content: "";
+			display: block;
+			clear: both;
+		}
+		.nav .tips-2 > ul > li {
+			float: left;
+			padding: 0 150px 0 10px;
+		}
+		.nav .tips-2 > ul a {
+			color: #fff;
+			font-size: 16px;
+			font-weight: bold;
+		}
+		.nav .three {
+			padding: 0 18px 0 13px;
+			background: url("./image/line.png") no-repeat right center;
+		}
+		.nav .three a {
+			padding-right: 18px;
+			background: url("./image/down2.png") no-repeat right center;
+			background-size: 12px auto;
+		}
+		.nav > ul > li:nth-child(3):hover > a {
+			color: #d6000f;
+			padding-right: 18px;
+			background: url("./image/down3.png") no-repeat right center;
+			background-size: 12px auto;
+		}
+		.nav > ul > li:nth-child(3):hover .tips-3 {
+			display: block;
+		}
+		.nav .tips-3 {
+			position: absolute;
+			background-color: #000;
+			width: 100%;
+			left: 0;
+			text-align: left;
+			display: none;
+			padding: 15px 0;
+		}
+		.nav .tips-3 > ul {
+			margin-left: 200px;
+		}
+		.nav .tips-3 > ul::after {
+			content: "";
+			display: block;
+			clear: both;
+		}
+		.nav .tips-3 > ul > li {
+			float: left;
+			width: 200px;
+			padding: 0 5px 0 10px;
+		}
+		.nav .tips-3 > ul a {
+			color: #fff;
+			font-size: 16px;
+			font-weight: bold;
+		}
+		.nav .tips-3 > ul:nth-child(2) {
+			margin-left: 200px;
+		}
+		.nav .tips-3 > ul:nth-child(2) ::after {
+			content: "";
+			display: block;
+			clear: both;
+		}
+		.nav .tips-3 > ul:nth-child(2) > li {
+			float: left;
+			width: 200px;
+			padding: 0 5px 0 10px;
+
+		}
+		.nav .tips-3 > ul:nth-child(2) a {
+			color: #589bc6;
+			font-size: 16px;
+			font-weight: lighter;
+		}
+		.nav .tips-3 > ul:nth-child(2) a:hover {
+			color: #d6000f;
+		}
+		.nav .four {
+			padding: 0 18px 0 13px;
+			background: url("./image/line.png") no-repeat right center;
+		}
+		.nav .four a {
+			padding-right: 18px;
+			background: url("./image/down2.png") no-repeat right center;
+			background-size: 12px auto;
+		}
+		.nav > ul > li:nth-child(4):hover > a {
+			color: #d6000f;
+			padding-right: 18px;
+			background: url("./image/down3.png") no-repeat right center;
+			background-size: 12px auto;
+		}
+		.nav > ul > li:nth-child(4):hover .tips-4 {
+			display: block;
+		}
+		.nav .tips-4 {
+			position: absolute;
+			background-color: #000;
+			width: 100%;
+			left: 0;
+			text-align: left;
+			display: none;
+			padding: 15px 0;
+		}
+		.nav .tips-4 > ul {
+			margin-left: 350px;
+		}
+		.nav .tips-4 > ul::after {
+			content: "";
+			display: block;
+			clear: both;
+		}
+		.nav .tips-4 > ul > li {
+			float: left;
+			padding: 0 150px 0 10px;
+		}
+		.nav .tips-4 > ul a {
+			color: #fff;
+			font-size: 16px;
+			font-weight: bold;
+		}
+		.nav .five {
+			padding: 0 18px 0 13px;
+			background: url("./image/line.png") no-repeat right center;
+		}
+		.nav .five a {
+			padding-right: 18px;
+			background: url("./image/down2.png") no-repeat right center;
+			background-size: 12px auto;
+		}
+		.nav > ul > li:nth-child(5):hover > a {
+			color: #d6000f;
+			padding-right: 18px;
+			background: url("./image/down3.png") no-repeat right center;
+			background-size: 12px auto;
+		}
+		.nav > ul > li:nth-child(5):hover .tips-5 {
+			display: block;
+		}
+		.nav .tips-5 {
+			position: absolute;
+			background-color: #000;
+			width: 100%;
+			left: 0;
+			text-align: left;
+			display: none;
+			padding: 15px 0;
+		}
+		.nav .tips-5 > ul {
+			margin-left: 350px;
+		}
+		.nav .tips-5 > ul::after {
+			content: "";
+			display: block;
+			clear: both;
+		}
+		.nav .tips-5 > ul > li {
+			float: left;
+			padding: 0 150px 0 10px;
+		}
+		.nav .tips-5 > ul a {
+			color: #fff;
+			font-size: 16px;
+			font-weight: bold;
+		}
+		.nav .six {
+			padding: 0 18px 0 13px;
+			background: url("./image/line.png") no-repeat right center;
+		}
+		.nav .six a:hover {
+			color: #d6000f;
+		}
+		.nav .seven {
+			padding: 0 18px 0 13px;
+			background: url("./image/line.png") no-repeat right center;
+		}
+		.nav .seven a:hover {
+			color: #d6000f;
+		}
+		.nav .eight {
+			padding: 0 18px 0 13px;
+		}
+		.nav .eight a:hover {
+			color: #d6000f;
+		}
+		.middle {
+			width: 100%;
+			height: 600px;
+			background-color: #f1f2ed;
+		}
+		.middle-top {
+			width: 100%;
+			height: 15px;
+			background-color: #000;
+		}
+		.content-box {
+			width: 600px;
+			background-color: #fff;
+			margin: 0 auto;
+			border: 1px solid #c9caca;
+			margin-top: 50px;
+		}
+		.content-box .box1 {
+			width: 160px;
+			font-weight: 600;
+			font-height: 44px;
+			color: #666;
+			text-align: center;
+			cursor: pointer;
+			padding-bottom: 2px;
+			margin: 40px 0 0 40px;
+		}
+		.content-box .box2 {
+			width: 480px;
+			height: 50px;
+			box-sizing: border-box;
+			border: 1px solid #c9caca;
+			margin: 15px 0 20px 50px;
+			padding: 5px 0;
+		}
+		.content-box .box2 > div {
+			height: 40px;
+			line-height: 40px;
+		}
+		.content-box .input2 {
+			width: 480px;
+			margin-left: 20px;
+		}
+		.content-box .input2 > input {
+			width: 450px;
+			border: none;
+			font-size: 15px;
+			color: gray;
+		}
+		.content-box .box3 {
+			width: 480px;
+			height: 50px;
+			box-sizing: border-box;
+			border: 1px solid #c9caca;
+			margin: 5px 0 20px 50px;
+			padding: 5px 0;
+		}
+		.content-box .box3 > div {
+			height: 40px;
+			line-height: 40px;
+		}
+		.content-box .input3 {
+			width: 480px;
+			margin-left: 20px;
+		}
+		.content-box .input3 > input {
+			width: 450px;
+			border: none;
+			font-size: 15px;
+			color: gray;
+		}
+		.content-box .box4 {
+			width: 480px;
+			height: 50px;
+			box-sizing: border-box;
+			border: 1px solid #c9caca;
+			margin: 5px 0 20px 50px;
+			padding: 5px 0;
+		}
+		.content-box .box4 > div {
+			height: 40px;
+			line-height: 40px;
+		}
+		.content-box .input4 {
+			width: 480px;
+			margin-left: 20px;
+		}
+		.content-box .input4 > input {
+			width: 450px;
+			border: none;
+			font-size: 15px;
+			color: gray;
+		}
+		.content-box .box5 {
+			width: 480px;
+			margin-left: 50px;
+		}
+		.content-box .box5::after {
+			content: "";
+			display: block;
+			clear: both;
+		}
+		.content-box .box-5 {
+			width: 290px;
+			height: 50px;
+			float: left;
+			box-sizing: border-box;
+			border: 1px solid #c9caca;
+			margin: 0 0 20px 0px;
+			padding: 5px 0;
+		}
+		.content-box .box-5 > div {
+			height: 40px;
+			line-height: 40px;
+		}
+		.content-box .input5 {
+			width: 270px;
+			margin-left: 20px;
+		}
+		.content-box .input5 > input {
+			width: 260px;
+			border: none;
+			font-size: 15px;
+			color: gray;
+			outline: 0;
+			padding: 0;
+		}
+		.content-box .get {
+			width: 175px;
+			height: 50px;
+			background-color: #000;
+			margin-left: 305px;
+			box-sizing: border-box;
+			padding: 12px 0;
+			text-align: center;
+			display: block;
+			font-size: 16px;
+			color: #fff;
+			font-weight: bold;
+		}
+		.content-box .box6 {
+			background-color: #b8172a;
+			width: 480px;
+			height: 50px; 
+			display: block;
+			margin-left: 50px;
+			box-sizing: border-box;
+			padding: 12px 0;
+			text-align: center;
+			font-size: 16px;
+			color: #fff;
+		}
+		.content-box .box6:hover {
+			background-color: #000;
+		}
+		.content-box .box7{
+			margin-bottom: 20px;
+			height: auto;
+			overflow: visible;
+			margin-top: 15px;
+		}
+		.content-box .box7 .box-7 {
+			padding-left: 50px;
+			margin-left: 0;
+			display: block;
+			position: relative;
+		}
+		.content-box .box7 .box-7 .input input {
+			cursor: pointer;
+		}
+		.content-box .box7 .box-7 .word {
+			font-size: 16px;
+			color: #d2d2d2;
+			font-weight: bold;
+		}
+		.content-box .box7 .box-7 .worda {
+			text-decoration: underline;
+			color: #d2d2d2;
+		}
+		.content-box .box7 .box-7 .worda:hover {
+			color: #c9192e;
+		}
+		.footer {
+			width: 100%;
+			background-color: #1c1c1c;
+			padding: 30px 0 50px;
+		}
+		.footer .footer-content {
+			width: 100%;
+			height: 270px;
+			box-sizing: border-box;
+		}
+		.footer .footer-content::after {
+			content: "";
+			display: block;
+			clear: both;
+		}
+		.footer-content .one {
+			height: 270px;
+			float: left;
+		}
+		.footer-content .one::after {
+			content: "";
+			display: block;
+			clear: both;
+		}
+		.footer-content .title {
+			font-size: 18px;
+			color: #fff;
+			height: 40px;
+			line-height: 40px;
+		}
+		.footer-content .one > ul {
+			float: left;
+			margin-left: 20px;
+			margin-top: 10px;
+		}
+		.footer-content .one > ul > li {
+			margin: 5px 0;
+		}
+		.footer-content .one > ul > li a{
+			color: #589bc6;
+		}
+		.footer-content .one > ul > li a:hover {
+			color: #b8172a;
+		}
+		.footer-content .one .list-one {
+			width: 190px;
+			height: 170px;
+		}
+		.footer-content .one .list-two {
+			width: 190px;
+			height: 160px;
+		}
+		.footer-content .bold {
+			font-weight: bold;
+			color: #fff;
+		}
+		.footer-content .two {
+			height: 270px;
+			float: left;
+			margin-left: 0px;
+			border-left: 1px solid #626262;
+			border-right: 1px solid #626262;
+			padding-right:50px;
+		}
+		.footer-content .two .title {
+			margin-left: 30px;
+		}
+		.footer-content .two > ul {
+			margin-left: 50px;
+			margin-top: 10px;
+		}
+		.footer-content .two .list-three > li {
+			margin: 10px 0;
+		}
+		.footer-content .two .list-four {
+			margin-top: 30px;
+		}
+		.footer-content .two .list-four > li {
+			margin: 10px 0;
+		}
+		.footer-content .two .list-four li:nth-child(2) a {
+			color: #567491;
+		}
+		.footer-content .two a {
+			cursor: default;
+		}
+		.footer-content .email {
+			color:  #589bc6;
+		}
+		.footer-content .email:hover {
+			color: #b8172a;
+		}
+		.footer-content .three {
+			height: 270px;
+			margin-left: 722px;
+		}
+		.footer-conntent .three::after {
+			content: "";
+			display: block;
+			clear: both;
+		}
+		.footer-content .three .title {
+			margin-left: 30px;
+			cursor: default;
+		}
+		.footer-content .three .title2 {
+			font-size: 18px;
+			color: #fff;
+			height: 60px;
+			line-height: 60px;
+			margin-left: 60px;
+			cursor: default;
+		}
+		.footer-content .three .word {
+			margin-left: 30px;
+			font-size: 15px;
+			color: #839183;
+			margin-top: 10px;
+		}
+		.footer-content .three .input {
+			width: 250px;
+			height: 45px;
+			border: 1px solid #d7d8d4;
+			padding: 5px 0;
+			margin-top: 8px;
+			box-sizing: border-box;
+			position: relative;
+			margin-left: 30px;
+			background-color: #fff;
+		}
+		.footer-content .three .input > div {
+			height: 35px;
+			line-height: 35px;
+		}
+		.footer-content .three .input > .icon {
+			box-sizing: border-box;
+			float: right;
+			width: 35px;
+			text-align: center;
+			font-size: 25px;
+		}
+		.footer-content .three .input > .icon a {
+			color: #64686b;
+		}
+		.footer-content .three .input > .icon a:hover {
+			color: #1c1c1c;
+		}
+		.footer-content .three .input > .inputbox input {
+			width: 195px;
+			color: gray;
+			font-size: 15px;
+			padding-left: 1em;
+			border: none;
+		}
+		.footer-content .three > ul > li {
+			float: left;
+			margin-top: 10px;
+		}
+		.footer-content .three > ul > li a {
+			display: block;
+			font-size: 34px;
+			width: 36px;
+			height: 36px;
+			background-color: #64686b;
+			margin-left: 10px;
+			transition: background 0.2s linear;
+		}
+		.footer-content .three > ul > .icon1 a {
+			margin-left: 30px;
+		}
+		.footer-content .three .icon1:hover .webchat {
+			background-color: #50c232;
+		}
+		.footer-content .three .webchat img {
+			transform: scale(1.5);
+			margin: 8.5px 8px;
+		}
+		.footer-content .three .icon2:hover .weibo {
+			background-color: #e90e24;
+		}
+		.footer-content .three .weibo img {
+			transform: scale(1.8);
+			margin: 10px 10px;
+		}
+		.footer-content .three .icon3:hover .n {
+			background-color: #ffd800;
+		}
+		.footer-content .three .n img {
+			transform: scale(1.8);
+			margin: 10px 9px;
+		}
+		.footer-content .three .icon4:hover .tengxun {
+			background-color: #21b1ff;
+		}
+		.footer-content .three .tengxun img {
+			transform: scale(1.8);
+			margin: 10px 10px;
+		}
+		.footer-content .three .icon5:hover .ins {
+			background-color: #a12eb2;
+		}
+		.footer-content .three .ins img {
+			transform: scale(1.5);
+			margin: 10px 9px;
+		}
+		.footer-foot::after {
+			content: "";
+			display: block;
+			clear: both;
+		}
+		.footer-foot .foot-1 {
+			width: 250px;
+			height: 170px;
+			float: left;
+		}
+		.footer-foot .foot-2 {
+			width: 240px;
+			height: 170px;
+			margin-left: 250px;
+		}
+		.footer-foot .foot-2 .one {
+			padding-top: 50px;
+			padding-left: 10px; 
+		}
+		.footer-foot .foot-2 .one a {
+			color: #919191;
+		}
+		.footer-foot .foot-2 .words {
+			font-size: 16px;
+			color: #589ba7;
+		}
+		.footer-foot .foot-2 .two .word-title {
+			width: 100px;
+			height: 35px;
+			background-color: #64686b;
+			margin-top: 15px;
+			margin-left: 10px;
+			display: block;
+			padding-left: 10px;
+			line-height: 35px;
+			box-sizing: border-box;
+			color: #fff;
+		}
+		.footer-foot .foot-2 .two > a > img {
+			margin-left: 30px;
+		}
+		.footer-foot .foot-2 .two  {
+			position: relative;
+		}
+		.footer-foot .foot-2 .two:hover .word-tip {
+			display: block;
+		}
+		.footer-foot .foot-2 .two .word-tip {
+			width: 230px;
+			height: 400px;
+			position: absolute;
+			margin-left: -150px;
+			overflow-y: scroll;
+			text-align: right;
+			display: none;
+			background-color: #fff;
+			float: left;
+			top: -400px;
+			left: 160px;
+		}
+		.footer-foot .foot-2 .two .word-tip > li {
+			line-height: 50px;
+		}
+		.footer-foot .foot-2 .two .word-tip > li a {
+			color: #000;
+		}
+		.aside {
+			width: 61px;
+			position: fixed;
+			right: 0;
+			top: 500px;
+		}
+		.aside > ul > li {
+			height: 61px;
+			position: relative;
+		}
+		.aside .one {
+			background-color: #c9192e;
+		}
+		.aside .one a img {
+			transform: scale(0.6);
+			position: absolute;
+			top: -5px;
+			left: 3px;
+		}
+		.aside .one .word {
+			position: absolute;
+			top: 35px;
+			left: 14px;
+			font-size: 16px;
+			color: #fff;
+			font-weight: bold;
+		}
+		.aside .two {
+			background-color: #000;
+		}
+		.aside .two a img {
+			transform: scale(0.5);
+			position: absolute;
+			top: -5px;
+			left: 6px;
+		}
+		.aside .two .word {
+			position: absolute;
+			top: 35px;
+			left: 14px;
+			font-size: 16px;
+			color: #fff;
+			font-weight: bold;
+		}
+
+	</style>
+</head>
+<body>
+	<div class="container">
+		<div class="header">
+			<div class="wrap">
+				<div class="header-top">
+					<div class="top-and">
+						<div class="top-1">
+							<ul>
+								<li><a class="one" href="#">登录</a></li>
+								<li><a class="two" href="#">注册</a></li>
+							</ul>
+						</div>
+						<div class="top-2">
+							<ul>
+								<li><a class="one" href="#">我的购物车</a>
+									<div class="tip">
+										<div class="little-box"></div>
+										<div class="p">
+											<p>购物车还没有商品，赶紧选购吧！</p>
+										</div>
+									</div>
+								</li>
+							</ul>
+						</div>
+						<div class="top-3">
+							<ul>
+								<li><a class="one" href="#">我的收藏夹</a></li>
+							</ul>
+						</div>
+						<div class="top-4">
+							<ul>
+								<li><a class="one" href="#">搜索店铺</a></li>
+							</ul>
+						</div>
+						<div class="top-5">
+							<ul>
+								<li><a class="one" href="#">中国</a>
+									<div class="two">
+										<ul>
+											<li style="background-color: #f1f2ed"><a href="#">中国</a></li>
+											<li><a href="#">中国香港（英文）</a></li>
+											<li><a href="#">中国台湾（繁体中文）</a></li>
+											<li><a href="#">法国</a></li>
+											<li><a href="#">德国</a></li>
+											<li><a href="#">英国</a></li>
+											<li><a href="#">澳大利亚</a></li>
+											<li><a href="#">奥地利</a></li>
+											<li><a href="#">爱尔兰</a></li>
+										</ul>
+									</div>
+								</li>
+							</ul>
+							
+						</div>
+						<div class="top-6">
+							<div class="icon">
+								<a href="#"><i class="fa fa-search"></i></a>
+							</div>
+							<div class="input">
+								<input class="email" type="text" placeholder="搜索VANS">
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="header-middle">
+					<div class="word">
+						<ul>
+							<li><a href="#">新品</a></li>
+							<li><a href="#">经典款</a></li>
+							<li><a href="#">职业滑板系列</a></li>
+						</ul>
+					</div>
+				</div>
+				<div class="header-bottom">
+					<div class="logo">
+						<a href="file:///F:/%E4%BD%9C%E4%B8%9A/%E5%90%95%E6%95%8F%20%201506024211/2-index.html"><img src="./image/logo.gif" alt="..."></a>
+					</div>
+					<div class="nav">
+						<ul>
+							<li class="one">
+								<a class="email" href="#">关于VANS</a>
+								<div class="tips">
+									<ul>
+										<li>
+											<a class="email" href="#">THIS IS OFF THE WALL</a>
+										</li>
+										<li>
+											<a href="#">新闻</a>
+										</li>
+									</ul>
+								</div>
+							</li>
+							<li class=two>
+								<a href="#">运动员</a>
+								<div class="tips-2">
+									<ul>
+										<li><a href="#">中国运动员</a></li>
+										<li><a href="#">全球运动员</a></li>
+									</ul>
+								</div>
+							</li>
+							<li class="three">
+								<a class="email" href="#">HOUSE OF VANS</a>
+								<div class="tips-3">
+									<ul>
+										<li><a class="email" href="#">关于HOUSE OF VANS</a></li>
+										<li><a href="#">滑板</a></li>
+										<li><a href="#">艺术</a></li>
+										<li><a href="#">音乐</a></li>
+										<li><a href="#">街头文化</a></li>
+									</ul>
+									<ul>
+										<li><a class="email" href="#">2018 HOUSE OF VANS首站登陆成都</a></li>
+										<li><a href="#">VANS 职业公园滑板赛</a></li>
+										<li><a href="#">CUSTOM CULTURE</a></li>
+										<li><a href="#">VANS 音乐人征集活动拉开帷幕</a></li>
+										<li><a class="email" href="#">HOUSE OF VANS WORKSHOP</a></li>
+									</ul>
+								</div>
+							</li>
+							<li class="four">
+								<a href="#">男子</a>
+								<div class="tips-4">
+									<ul>
+										<li><a href="#">鞋款</a></li>
+										<li><a href="#">服装</a></li>
+										<li><a href="#">配件</a></li>
+										<li><a href="#">每周精选</a></li>
+									</ul>
+								</div>
+							</li>
+							<li class="five">
+								<a href="#">女子</a>
+								<div class="tips-5">
+									<ul>
+										<li><a href="#">鞋款</a></li>
+										<li><a href="#">服装</a></li>
+										<li><a href="#">配件</a></li>
+										<li><a href="#">每周精选</a></li>
+									</ul>
+								</div>
+							</li>
+							<li class="six"><a class="email" href="#">CUSTOMS</a></li>
+							<li class="seven"><a class="email" href="#">VAULT BY VANS</a></li>
+							<li class="eight"><a href="#">职业鞋款</a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="middle">
+			<div class="middle-top"></div>
+			<div class="wrap">
+				<div class="content-box">
+					<div class="box1">
+						<h2>用户注册</h2>
+					</div>
+					<div class="box2">
+						<div class="input2">
+							<input type="text" placeholder="请输入11位手机号">
+						</div>
+					</div>
+					<div class="box3">
+						<div class="input3">
+							<input type="text" placeholder="8-20个字母、数字或符号组合，请不要输入特殊字符">
+						</div>
+					</div>
+					<div class="box4">
+						<div class="input4">
+							<input type="text" placeholder="再次填写密码">
+						</div>
+					</div>
+					<div class="box5">
+						<div class="box-5">
+							<div class="input5">
+								<input type="text">
+							</div>
+						</div>
+						<a class="get" href="#">获取短信验证码</a>
+					</div>
+					<a class="box6" href="#">立即注册</a>
+					<div class="box7">
+						<span class="box-7">
+							<span class="input">
+								<input type="checkbox" checked="checked">
+							</span>
+							<label class="word" for="">
+								我已阅读并同意VANS的
+								<a class="worda" href="#">隐私政策</a>
+								和
+								<a class="worda" href="#">使用条款</a>
+							</label>
+						</span>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="footer">
+			<div class="wrap">
+				<div class="footer-content">
+					<div class="one">
+						<span><h3 class="title">获取帮助</h3></span>
+						<ul class="list-one">
+							<li class="bold">购物</li>
+							<li><a href="#">男子</a></li>
+							<li><a href="#">女子</a></li>
+							<li class="email"><a href="#">CUSTOMS</a></li>
+							<li class="email"><a href="#">Vault by Vans</a></li>
+							<li><a href="#">职业鞋款</a></li>
+							<li><a href="#">查找店铺</a></li>
+						</ul>
+						<ul class="list-two">
+							<li class="bold">公司</li>
+							<li><a href="#">客户服务</a></li>
+							<li><a href="#">使用条款</a></li>
+							<li><a href="#">隐私政策</a></li>
+							<li><a href="#">可持续发展</a></li>
+						</ul>
+					</div>
+					<div class="two">
+						<span><a class="title" href="#">联系我们</a></span>
+						<ul class="list-three">
+							<li><a  class="bold" href="#">电子邮件</a></li>
+							<li class="email">contactus@vans.com.cn</li>
+						</ul>
+						<ul class="list-four">
+							<li><a  class="bold" href="#">地址</a></li>
+							<li><a href="#">中国上海市南京西路688号8楼</a></li>
+						</ul>
+					</div>
+					<div class="three">
+						<span><a class="title" href="#">订阅</a></span>
+						<li class="word">订阅以获取最新资讯</li>
+						<div class="input">
+							<div class="icon">
+								<a href="#"><i class="fa fa-angle-right"></i></a>
+							</div>
+							<div class="inputbox">
+								<input type="text" placeholder="电子邮件">
+							</div>
+						</div>
+						<a class="title2" href="#">在这些地方找到我们</a>
+						<ul class="icons">
+							<li class="icon1">
+								<a class="webchat" href="#">
+									<img src="./image/webchat.png" alt="">
+								</a>
+							</li>
+							<li class="icon2">
+								<a class="weibo" href="#">
+									<img src="./image/weibo.png" alt="">
+								</a>
+							</li>
+							<li class="icon3">
+								<a class="n" href="#">
+									<img src="./image/n.png" alt="">
+								</a>
+							</li>
+							<li class="icon4">
+								<a class="tengxun" href="#">
+									<img src="./image/teng.png" alt="">
+								</a>
+							</li>
+							<li class="icon5">
+								<a class="ins" href="#">
+									<img src="./image/ins.png" alt="">
+								</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+				<div class="footer-foot">
+					<div class="foot-1">
+						<img src="./image/footer-1.gif" alt="">
+					</div>
+					<div class="foot-2">
+						<div class="one">
+							<a class="email" href="#">苏ICP备13010219号</a>
+							<span class="words">工信部网站威富服饰（中国）有限公司</span>
+						</div>
+						<div class="two">
+							<a class="word-title" href="#">中国
+								<img src="./image/down.png" alt="">
+							</a>
+							<ul class="word-tip">
+								<li style="background-color: #f1f2ed"><a href="#">中国</a></li>
+								<li><a href="#">中国香港（繁体中文）</a></li>
+								<li><a href="#">中国香港（英语）</a></li>
+								<li><a href="#">中国台湾</a></li>
+								<li><a href="#">阿根廷</a></li>
+								<li><a href="#">爱尔兰</a></li>
+								<li><a href="#">奥地利</a></li>
+								<li><a href="#">澳大利亚</a></li>
+								<li><a href="#">巴西</a></li>
+								<li><a href="#">法国</a></li>
+								<li><a href="#">德国</a></li>
+								<li><a href="#">英国</a></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="aside">
+			<ul>
+				<li class="one">
+					<a href="#">
+						<img src="./image/ear.png" alt="">
+						<p class="word">客服</p>
+					</a>
+				</li>
+				<li class="two">
+					<a href="#">
+						<img src="./image/top.png" alt="">
+						<p class="word">置顶</p>
+					</a>
+				</li>
+			</ul>
+		</div>
+	</div>
+</body>
+</html>

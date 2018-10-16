@@ -1,0 +1,1605 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>VANS首页</title>
+	<link rel="stylesheet" href="./css/common.css">
+	<link rel="stylesheet" href="./font-awesome-4.7.0/css/font-awesome.css">
+	<style>
+		/* .container{
+			
+		} */
+		.email {
+			letter-spacing: 0;
+		}
+		.header{
+			height: 150px;
+			width: 100%;
+			background-color: #fff;
+		}
+		.wrap{
+			width: 1200px;
+			margin:0 auto;
+		}
+		.header-top{
+			height: 50px;
+			width: 100%;
+		}
+		.header-top::after{
+			content: "";
+			display: block;
+			clear:both;
+		}
+		.header-top > div {
+			font-size: 15px;
+		}
+		.header-top a {
+			color: #d2d2d2;
+		}
+		.header-top a:hover {
+			color: #d6000f;
+		}
+		.top-and{
+			height: 50px;
+			width: 860px;
+			float: right;
+		}
+		.top-and::after {
+			content: "";
+			display: block;
+			clear: both;
+		}
+		.top-1 {
+			float: left;
+		}
+		.top-1 > ul {
+			width: 130px;
+			height: 50px;
+		}
+		.top-1 > ul::after {
+			content: "";
+			display: block;
+			clear: both;
+		}
+		.top-1 > ul > li {
+			float: left;
+			line-height: 50px;
+			text-align: center;
+		}
+		.top-1  .one {
+			background: url("./image/personal.png") no-repeat 0 3px;
+			background-size: 20px auto;
+			padding: 2px 0 0 20px;
+		}
+		
+		.top-1 .two {
+			background: url("./image/line.png") no-repeat 0 3px;
+			background-size: 20px auto;
+			padding: 2px 0 0 20px;
+		}
+		.top-2 {
+			width: 120px;
+			height: 50px;
+			float: left;
+		}
+		.top-2 > ul > li {
+			line-height: 50px;
+			text-align: center;
+			padding-right: 15px;
+			background: url("./image/down.png") no-repeat right center;
+			background-size: 12px;
+		}
+		.top-2 .one {
+			background: url("./image/car.png") no-repeat 0 3px;
+			background-size: 18px auto;
+			padding: 2px 0 0 20px;
+		}
+		.top-2 > ul > li {
+			position: relative;
+		}
+		.top-2 > ul > li:hover .tip {
+			display: block;
+		}
+		.top-2 .tip {
+			width: 300px;
+			background-color: #f1f2ed;
+			left: -80px;
+			position: absolute;
+			display: none;
+		}
+		.top-2 .tip .p {
+			padding: 10px 20px 5px 20px;
+			font-weight: bolder;
+			color: gray;
+		}
+		.top-2 .little-box {
+			width: 15px;
+			height: 15px;
+			background-color: #f1f2ed;
+			margin-top: -5px;
+			margin-left: 130px;
+			transform: rotate(45deg);
+		}
+		.top-3 {
+			width: 105px;
+			height: 50px;
+			float: left;
+			margin-left: 15px;
+		}
+		.top-3 > ul > li {
+			line-height: 50px;
+		}
+		.top-3 .one {
+			background: url("./image/heart.png") no-repeat 0 3px;
+			background-size: 18px auto;
+			padding: 2px 0 0 20px;
+		}
+		.top-4 {
+			width: 85px;
+			height: 50px;
+			float: left;
+			margin-left: 15px;
+		}
+		.top-4 > ul > li {
+			line-height: 50px;
+		}
+		.top-4 .one {
+			background: url("./image/location.png") no-repeat 0 3px;
+			background-size: 18px auto;
+			padding: 2px 0 0 20px;
+		}
+		.top-5 {
+			width: 50px;
+			height: 50px;
+			float: left;
+			margin-left: 15px;
+		}
+		.top-5 > ul:nth-child(1) > li {
+			line-height: 50px;
+			background: url("./image/down.png") no-repeat right center;
+			background-size: 18px auto;
+		}
+		.top-5 > ul > li:hover > .two {
+			display: block;
+		}
+		.top-5 .two {
+			width: 200px;
+			height: 200px;
+			position: absolute;
+			margin-left: -150px;
+			overflow-y: scroll;
+			text-align: right;
+			display: none;
+			background-color: #fff;
+		}
+		.top-5 .two > ul > li a {
+			color: #000;
+		}
+		.top-5 .two > ul > li a:hover {
+			color: #d6000f;
+		}
+		.top-6 {
+			width: 220px;
+			height: 45px;
+			float: left;
+			border: 1px solid #d2d2d2;
+			padding: 5px 0;
+			margin-top: 2.5px;
+			box-sizing: border-box;
+			position: relative;
+			margin-left: 15px;
+		}
+		.top-6 > div {
+			height: 35px;
+			line-height: 35px;
+		}
+		.top-6 > .icon {
+			box-sizing: border-box;
+			float: right;
+			width: 35px;
+			text-align: center;
+			font-size: 25px;
+		}
+		.top-6 > .icon a {
+			color: #64686b;
+		}
+		.top-6 .input {
+			width: 185px;
+		}
+		.top-6 .input > input {
+			width: 160px;
+			color: #d2d2d2;
+			font-size: 16px;
+			font-weight: bolder;
+			border: none;
+			padding-left: 1em;
+		}
+		.header-middle{
+			height: 20px;
+			width:100%;
+		}
+		.header-middle::after {
+			content: "";
+			display: block;
+			clear: both;
+		}
+		.word > ul {
+			width: 310px;
+			height: 20px;
+			box-sizing: border-box;
+			float: right;
+			padding: 3px 0;
+		}
+		.word > ul::after {
+			content: "";
+			display: block;
+			clear: both;
+		}
+		.word > ul > li {
+			float: left;
+			width: 50px;
+			font-size: 13px;
+			text-align: center;
+			border-right: 2px solid #d2d2d2;
+		}
+		.word > ul > li a {
+			color: #d2d2d2;
+		}
+		.word > ul > li a:hover {
+			color: #d6000f;
+		}
+		.word > ul > li:nth-child(2) {
+			width: 65px;
+		}
+		.word > ul > li:nth-child(3) {
+			width: 100px;
+			border-right: none;
+		}
+		.header-bottom{
+			height: 80px;
+			width: 100%;
+		}
+		.header-bottom::after{
+			content: "";
+			display: block;
+			clear: both;
+		}
+		.logo{
+			height: 80px;
+			width: 180px;
+			float: left;
+		}
+		.nav{
+			height: 80px;
+			width: 1020px;
+			float: right;
+		}
+		.nav > ul {
+			margin-top: 45px;
+		}
+		.nav > ul::after {
+			content: "";
+			display: block;
+			clear: both;
+		}
+		.nav > ul > li {
+			float: left;
+			line-height: 30px;
+		}
+		.nav > ul > li > a {
+			color: #000;
+			font-size: 16px;
+			font-weight: bolder;
+		}
+		.nav .one {
+			padding: 0 18px 0 13px;
+			background: url("./image/line.png") no-repeat right center;
+		}
+		.nav .one > a {
+			padding-right: 18px;
+			background: url("./image/down2.png") no-repeat right center;
+			background-size: 12px auto;
+		}
+		.nav > ul > li:nth-child(1):hover > a {
+			color: #d6000f;
+			padding-right: 18px;
+			background: url("./image/down3.png") no-repeat right center;
+			background-size: 12px auto;
+		}
+		.nav > ul > li:nth-child(1):hover .tips {
+			display: block;
+		}
+		.nav .tips {
+			position: absolute;
+			background-color: #000;
+			width: 100%;
+			left: 0;
+			text-align: left;
+			display: none;
+			padding: 15px 0;
+		}
+		.nav .tips > ul {
+			margin-left: 350px;
+		}
+		.nav .tips > ul::after {
+			content: "";
+			display: block;
+			clear: both;
+		}
+		.nav .tips > ul > li {
+			float: left;
+			padding: 0 50px 0 10px;
+		}
+		.nav .tips > ul a {
+			color: #fff;
+			font-size: 16px;
+			font-weight: bold;
+		}
+		.nav .two {
+			padding: 0 18px 0 13px;
+			background: url("./image/line.png") no-repeat right center;
+		}
+		.nav .two a {
+			padding-right: 18px;
+			background: url("./image/down2.png") no-repeat right center;
+			background-size: 12px auto;
+		}
+		.nav > ul > li:nth-child(2):hover > a {
+			color: #d6000f;
+			padding-right: 18px;
+			background: url("./image/down3.png") no-repeat right center;
+			background-size: 12px auto;
+		}
+		.nav > ul > li:nth-child(2):hover .tips-2 {
+			display: block;
+		}
+		.nav .tips-2 {
+			position: absolute;
+			background-color: #000;
+			width: 100%;
+			left: 0;
+			text-align: left;
+			display: none;
+			padding: 15px 0;
+		}
+		.nav .tips-2 > ul {
+			margin-left: 450px;
+		}
+		.nav .tips-2 > ul::after {
+			content: "";
+			display: block;
+			clear: both;
+		}
+		.nav .tips-2 > ul > li {
+			float: left;
+			padding: 0 150px 0 10px;
+		}
+		.nav .tips-2 > ul a {
+			color: #fff;
+			font-size: 16px;
+			font-weight: bold;
+		}
+		.nav .three {
+			padding: 0 18px 0 13px;
+			background: url("./image/line.png") no-repeat right center;
+		}
+		.nav .three a {
+			padding-right: 18px;
+			background: url("./image/down2.png") no-repeat right center;
+			background-size: 12px auto;
+		}
+		.nav > ul > li:nth-child(3):hover > a {
+			color: #d6000f;
+			padding-right: 18px;
+			background: url("./image/down3.png") no-repeat right center;
+			background-size: 12px auto;
+		}
+		.nav > ul > li:nth-child(3):hover .tips-3 {
+			display: block;
+		}
+		.nav .tips-3 {
+			position: absolute;
+			background-color: #000;
+			width: 100%;
+			left: 0;
+			text-align: left;
+			display: none;
+			padding: 15px 0;
+		}
+		.nav .tips-3 > ul {
+			margin-left: 200px;
+		}
+		.nav .tips-3 > ul::after {
+			content: "";
+			display: block;
+			clear: both;
+		}
+		.nav .tips-3 > ul > li {
+			float: left;
+			width: 200px;
+			padding: 0 5px 0 10px;
+		}
+		.nav .tips-3 > ul a {
+			color: #fff;
+			font-size: 16px;
+			font-weight: bold;
+		}
+		.nav .tips-3 > ul:nth-child(2) {
+			margin-left: 200px;
+		}
+		.nav .tips-3 > ul:nth-child(2) ::after {
+			content: "";
+			display: block;
+			clear: both;
+		}
+		.nav .tips-3 > ul:nth-child(2) > li {
+			float: left;
+			width: 200px;
+			padding: 0 5px 0 10px;
+
+		}
+		.nav .tips-3 > ul:nth-child(2) a {
+			color: #589bc6;
+			font-size: 16px;
+			font-weight: lighter;
+		}
+		.nav .tips-3 > ul:nth-child(2) a:hover {
+			color: #d6000f;
+		}
+		.nav .four {
+			padding: 0 18px 0 13px;
+			background: url("./image/line.png") no-repeat right center;
+		}
+		.nav .four a {
+			padding-right: 18px;
+			background: url("./image/down2.png") no-repeat right center;
+			background-size: 12px auto;
+		}
+		.nav > ul > li:nth-child(4):hover > a {
+			color: #d6000f;
+			padding-right: 18px;
+			background: url("./image/down3.png") no-repeat right center;
+			background-size: 12px auto;
+		}
+		.nav > ul > li:nth-child(4):hover .tips-4 {
+			display: block;
+		}
+		.nav .tips-4 {
+			position: absolute;
+			background-color: #000;
+			width: 100%;
+			left: 0;
+			text-align: left;
+			display: none;
+			padding: 15px 0;
+		}
+		.nav .tips-4 > ul {
+			margin-left: 350px;
+		}
+		.nav .tips-4 > ul::after {
+			content: "";
+			display: block;
+			clear: both;
+		}
+		.nav .tips-4 > ul > li {
+			float: left;
+			padding: 0 150px 0 10px;
+		}
+		.nav .tips-4 > ul a {
+			color: #fff;
+			font-size: 16px;
+			font-weight: bold;
+		}
+		.nav .five {
+			padding: 0 18px 0 13px;
+			background: url("./image/line.png") no-repeat right center;
+		}
+		.nav .five a {
+			padding-right: 18px;
+			background: url("./image/down2.png") no-repeat right center;
+			background-size: 12px auto;
+		}
+		.nav > ul > li:nth-child(5):hover > a {
+			color: #d6000f;
+			padding-right: 18px;
+			background: url("./image/down3.png") no-repeat right center;
+			background-size: 12px auto;
+		}
+		.nav > ul > li:nth-child(5):hover .tips-5 {
+			display: block;
+		}
+		.nav .tips-5 {
+			position: absolute;
+			background-color: #000;
+			width: 100%;
+			left: 0;
+			text-align: left;
+			display: none;
+			padding: 15px 0;
+		}
+		.nav .tips-5 > ul {
+			margin-left: 350px;
+		}
+		.nav .tips-5 > ul::after {
+			content: "";
+			display: block;
+			clear: both;
+		}
+		.nav .tips-5 > ul > li {
+			float: left;
+			padding: 0 150px 0 10px;
+		}
+		.nav .tips-5 > ul a {
+			color: #fff;
+			font-size: 16px;
+			font-weight: bold;
+		}
+		.nav .six {
+			padding: 0 18px 0 13px;
+			background: url("./image/line.png") no-repeat right center;
+		}
+		.nav .six a:hover {
+			color: #d6000f;
+		}
+		.nav .seven {
+			padding: 0 18px 0 13px;
+			background: url("./image/line.png") no-repeat right center;
+		}
+		.nav .seven a:hover {
+			color: #d6000f;
+		}
+		.nav .eight {
+			padding: 0 18px 0 13px;
+		}
+		.nav .eight a:hover {
+			color: #d6000f;
+		}
+		.middle {
+			width: 100%;
+			padding-bottom: 60px;
+			background-color: #f1f2ed;
+		}
+		.middle-top {
+			width: 100%;
+			height: 15px;
+			background-color: #000;
+		}
+		.middle .lunbo {
+			width: 100%;
+			overflow: hidden;
+			margin-top: 30px;
+		}
+		.middle .lunbo > ul {
+			width: 4800px;
+			overflow: hidden;
+			animation-name: lunbo;
+			animation-iteration-count: infinite;
+			animation-duration: 10s;
+			animation-timing-function: ease-in-out;
+		}
+		.middle .lunbo > ul:hover {
+			animation-play-state: paused;
+		}
+		@keyframes lunbo {
+			0% {
+				margin-left: 0px;
+			}
+			33% {
+				margin-left: -1200px;
+			}
+			66% {
+				margin-left: -2400px;
+			}
+			100% {
+				margin-left: -3600px;
+			}
+		}
+		.middle .lunbo > ul > li {
+			float: left;
+		}
+		.middle .lunbo > ul::after {
+			content: "";
+			display: block;
+			clear: both;
+		}
+		.middle .photo {
+			width: 100%;
+			margin-top: 50px;
+		}
+		.middle .photo > ul > li {
+			float: left;
+		}
+		.middle .photo > ul::after {
+			content: "";
+			display: block;
+			clear: both;
+		}
+		.middle .photo-1 .black {
+			width: 333px;
+			height: 205px;
+			background-color: #000;
+			background-color: rgba(0,0,0,0.8);
+			margin: -205px 0 0 60px;
+			position: absolute;
+			text-align: center;
+		}
+		.middle .title3 {
+			color: #fff;
+			font-size: 22px;
+			line-height: 22px;
+			margin: 20px 0 15px 0;
+		}
+		.middle .photo-1 .black ul li:hover a {
+			background-color: #d6000f;
+		}
+		.middle .photo-1 .black a {
+			font-size: 17px;
+			line-height: 34px;
+			color: #fff;
+			height: auto;
+			margin: 0 auto;
+			padding: 5px 10px;
+			transition: background-color 0.2s linear;
+		}
+		.middle .photo1 {
+			margin-left: 60px;
+		}
+		.middle .photo-2 .black {
+			width: 333px;
+			height: 205px;
+			background-color: #000;
+			background-color: rgba(0,0,0,0.8);
+			margin: -205px 0 0 40px;
+			position: absolute;
+			text-align: center;
+		}
+		.middle .photo-2 .black ul li:hover a {
+			background-color: #d6000f;
+		}
+		.middle .photo-2 .black a {
+			font-size: 17px;
+			line-height: 34px;
+			color: #fff;
+			height: auto;
+			margin: 0 auto;
+			padding: 5px 10px;
+			transition: background-color 0.2s linear;
+		}
+		.middle .photo2 {
+			margin: 0 40px;
+		}
+		.middle .photo-3 .black {
+			width: 333px;
+			height: 102.5px;
+			background-color: #000;
+			background-color: rgba(0,0,0,0.8);
+			margin-top: -102.5px;
+			position: absolute;
+			text-align: center;
+		}
+		.middle .photo-3 .black ul li:hover a {
+			background-color: #d6000f;
+		}
+		.middle .photo-3 .black a {
+			font-size: 17px;
+			line-height: 34px;
+			color: #fff;
+			height: auto;
+			margin: 0 auto;
+			padding: 5px 10px;
+			transition: background-color 0.2s linear;
+		}
+		.middle .news .newtitle {
+			text-align: center;
+			margin: 20px 0;
+			font-size: 35px;
+			line-height: 60px;
+			margin-top: 30px;
+		}
+		.middle .news .newsword ul {
+			margin-left: 60px;
+		}
+		.middle .news .newsword ul::after {
+			content: "";
+			display: block;
+			clear: both;
+		}
+		.middle .news .newsword ul li {
+			float: left;
+			background-color: #fff;
+			border: 1px solid #ccc;
+			margin-right: 30px;
+		}
+		.middle .news .news-1 {
+			width: 215px;
+			margin: 15px 15px 35px 15px;
+		}
+		.middle .news .news-1 a img {
+			width: 215px;
+			height: 192px;
+		}
+		.middle .news .news-1 h3 {
+			color: #000;
+			margin-top: 10px;
+		}
+		.middle .news .news-1 p {
+			color: #666666;
+			margin-top: 25px;
+		}
+		.middle .news .news-1 h4 {
+			font-size: 16px;
+			margin-top: 25px;
+			color: #666666;
+		}
+		.middle .news .a2 {
+			font-size: 16px;
+			font-weight: bold;
+			margin-left: 70px;
+			color: #58a7d6;
+		}
+		.middle .news .a2:hover {
+			color: #d5000f;
+		}
+		.middle .news .news-2 {
+			width: 215px;
+			margin: 15px 15px 35px 15px;
+		}
+		.middle .news .news-2 a img {
+			width: 215px;
+			height: 192px;
+		}
+		.middle .news .news-2 h3 {
+			color: #000;
+			margin-top: 10px;
+		}
+		.middle .news .news-2 p {
+			color: #666666;
+			margin-top: 25px;
+		}
+		.middle .news .news-2 h4 {
+			font-size: 16px;
+			margin-top: 25px;
+			color: #666666;
+		}
+		.middle .news .news-3 {
+			width: 215px;
+			margin: 15px 15px 35px 15px;
+		}
+		.middle .news .news-3 a img {
+			width: 215px;
+			height: 192px;
+		}
+		.middle .news .news-3 h3 {
+			color: #000;
+			margin-top: 10px;
+		}
+		.middle .news .news-3 p {
+			color: #666666;
+			margin-top: 25px;
+		}
+		.middle .news .news-3 h4 {
+			font-size: 16px;
+			margin-top: 25px;
+			color: #666666;
+		}
+		.middle .news .news-4 {
+			width: 215px;
+			margin: 15px 15px 35px 15px;
+		}
+		.middle .news .news-4 a img {
+			width: 215px;
+			height: 192px;
+		}
+		.middle .news .news-4 h3 {
+			color: #000;
+			margin-top: 10px;
+		}
+		.middle .news .news-4 p {
+			color: #666666;
+			margin-top: 25px;
+		}
+		.middle .news .news-4 h4 {
+			font-size: 16px;
+			margin-top: 25px;
+			color: #666666;
+		}
+		.middle .yue {
+			margin-top: 50px;
+		}
+		.middle .du {
+			 width: 130px;
+			 height: 50px;
+			 background-color: #000;
+			 margin: 0 auto;
+			 text-align: center;
+		}
+		.middle .du a {
+			color: #fff;
+			line-height: 50px;
+			font-weight: bold;
+			font-size: 16px;
+		}
+		.middle .m-b-word {
+			margin-top: 40px;
+			text-align: center;
+		}
+		.middle .m-b-word h1 {
+			width: 245px;
+			height: 42px;
+			margin: 0 auto;
+		}
+		.middle .m-bottom ul::after {
+			content: "";
+			display: block;
+			clear: both;
+		}
+		.middle .m-bottom ul {
+			margin-left: 60px;
+		}
+		.middle .m-bottom ul li {
+			float: left;
+			margin-top: 20px;
+			margin-right: 30px;
+		}
+		.middle .m-word {
+			width: 245px;
+			height: 80px;
+			display: block;
+			color: #fff;
+			font-weight: bold;
+			text-align: center;
+			line-height: 80px;
+			margin-top: -83px;
+			font-size: 19px;
+			position: absolute;
+			background-color: #000;
+			background-color: rgba(0,0,0,0.6);
+		}
+		.footer {
+			width: 100%;
+			background-color: #1c1c1c;
+			padding: 30px 0 50px;
+		}
+		.footer .footer-content {
+			width: 100%;
+			height: 270px;
+			box-sizing: border-box;
+		}
+		.footer .footer-content::after {
+			content: "";
+			display: block;
+			clear: both;
+		}
+		.footer-content .one {
+			height: 270px;
+			float: left;
+		}
+		.footer-content .one::after {
+			content: "";
+			display: block;
+			clear: both;
+		}
+		.footer-content .title {
+			font-size: 18px;
+			color: #fff;
+			height: 40px;
+			line-height: 40px;
+		}
+		.footer-content .one > ul {
+			float: left;
+			margin-left: 20px;
+			margin-top: 10px;
+		}
+		.footer-content .one > ul > li {
+			margin: 5px 0;
+		}
+		.footer-content .one > ul > li a{
+			color: #589bc6;
+		}
+		.footer-content .one > ul > li a:hover {
+			color: #b8172a;
+		}
+		.footer-content .one .list-one {
+			width: 190px;
+			height: 170px;
+		}
+		.footer-content .one .list-two {
+			width: 190px;
+			height: 160px;
+		}
+		.footer-content .bold {
+			font-weight: bold;
+			color: #fff;
+		}
+		.footer-content .two {
+			height: 270px;
+			float: left;
+			margin-left: 0px;
+			border-left: 1px solid #626262;
+			border-right: 1px solid #626262;
+			padding-right:50px;
+		}
+		.footer-content .two .title {
+			margin-left: 30px;
+		}
+		.footer-content .two > ul {
+			margin-left: 50px;
+			margin-top: 10px;
+		}
+		.footer-content .two .list-three > li {
+			margin: 10px 0;
+		}
+		.footer-content .two .list-four {
+			margin-top: 30px;
+		}
+		.footer-content .two .list-four > li {
+			margin: 10px 0;
+		}
+		.footer-content .two .list-four li:nth-child(2) a {
+			color: #567491;
+		}
+		.footer-content .two a {
+			cursor: default;
+		}
+		.footer-content .email {
+			color:  #589bc6;
+		}
+		.footer-content .email:hover {
+			color: #b8172a;
+		}
+		.footer-content .three {
+			height: 270px;
+			margin-left: 722px;
+		}
+		.footer-conntent .three::after {
+			content: "";
+			display: block;
+			clear: both;
+		}
+		.footer-content .three .title {
+			margin-left: 30px;
+			cursor: default;
+		}
+		.footer-content .three .title2 {
+			font-size: 18px;
+			color: #fff;
+			height: 60px;
+			line-height: 60px;
+			margin-left: 60px;
+			cursor: default;
+		}
+		.footer-content .three .word {
+			margin-left: 30px;
+			font-size: 15px;
+			color: #839183;
+			margin-top: 10px;
+		}
+		.footer-content .three .input {
+			width: 250px;
+			height: 45px;
+			border: 1px solid #d7d8d4;
+			padding: 5px 0;
+			margin-top: 8px;
+			box-sizing: border-box;
+			position: relative;
+			margin-left: 30px;
+			background-color: #fff;
+		}
+		.footer-content .three .input > div {
+			height: 35px;
+			line-height: 35px;
+		}
+		.footer-content .three .input > .icon {
+			box-sizing: border-box;
+			float: right;
+			width: 35px;
+			text-align: center;
+			font-size: 25px;
+		}
+		.footer-content .three .input > .icon a {
+			color: #64686b;
+		}
+		.footer-content .three .input > .icon a:hover {
+			color: #1c1c1c;
+		}
+		.footer-content .three .input > .inputbox input {
+			width: 195px;
+			color: gray;
+			font-size: 15px;
+			padding-left: 1em;
+			border: none;
+		}
+		.footer-content .three > ul > li {
+			float: left;
+			margin-top: 10px;
+		}
+		.footer-content .three > ul > li a {
+			display: block;
+			font-size: 34px;
+			width: 36px;
+			height: 36px;
+			background-color: #64686b;
+			margin-left: 10px;
+			transition: background 0.2s linear;
+		}
+		.footer-content .three > ul > .icon1 a {
+			margin-left: 30px;
+		}
+		.footer-content .three .icon1:hover .webchat {
+			background-color: #50c232;
+		}
+		.footer-content .three .webchat img {
+			transform: scale(1.5);
+			margin: 8.5px 8px;
+		}
+		.footer-content .three .icon2:hover .weibo {
+			background-color: #e90e24;
+		}
+		.footer-content .three .weibo img {
+			transform: scale(1.8);
+			margin: 10px 10px;
+		}
+		.footer-content .three .icon3:hover .n {
+			background-color: #ffd800;
+		}
+		.footer-content .three .n img {
+			transform: scale(1.8);
+			margin: 10px 9px;
+		}
+		.footer-content .three .icon4:hover .tengxun {
+			background-color: #21b1ff;
+		}
+		.footer-content .three .tengxun img {
+			transform: scale(1.8);
+			margin: 10px 10px;
+		}
+		.footer-content .three .icon5:hover .ins {
+			background-color: #a12eb2;
+		}
+		.footer-content .three .ins img {
+			transform: scale(1.5);
+			margin: 10px 9px;
+		}
+		.footer-foot::after {
+			content: "";
+			display: block;
+			clear: both;
+		}
+		.footer-foot .foot-1 {
+			width: 250px;
+			height: 170px;
+			float: left;
+		}
+		.footer-foot .foot-2 {
+			width: 240px;
+			height: 170px;
+			margin-left: 250px;
+		}
+		.footer-foot .foot-2 .one {
+			padding-top: 50px;
+			padding-left: 10px; 
+		}
+		.footer-foot .foot-2 .one a {
+			color: #919191;
+		}
+		.footer-foot .foot-2 .words {
+			font-size: 16px;
+			color: #589ba7;
+		}
+		.footer-foot .foot-2 .two .word-title {
+			width: 100px;
+			height: 35px;
+			background-color: #64686b;
+			margin-top: 15px;
+			margin-left: 10px;
+			display: block;
+			padding-left: 10px;
+			line-height: 35px;
+			box-sizing: border-box;
+			color: #fff;
+		}
+		.footer-foot .foot-2 .two > a > img {
+			margin-left: 30px;
+		}
+		.footer-foot .foot-2 .two  {
+			position: relative;
+		}
+		.footer-foot .foot-2 .two:hover .word-tip {
+			display: block;
+		}
+		.footer-foot .foot-2 .two .word-tip {
+			width: 230px;
+			height: 400px;
+			position: absolute;
+			margin-left: -150px;
+			overflow-y: scroll;
+			text-align: right;
+			display: none;
+			background-color: #fff;
+			float: left;
+			top: -400px;
+			left: 160px;
+		}
+		.footer-foot .foot-2 .two .word-tip > li {
+			line-height: 50px;
+		}
+		.footer-foot .foot-2 .two .word-tip > li a {
+			color: #000;
+		}
+		.aside {
+			width: 61px;
+			position: fixed;
+			right: 0;
+			top: 500px;
+		}
+		.aside > ul > li {
+			height: 61px;
+			position: relative;
+		}
+		.aside .one {
+			background-color: #c9192e;
+		}
+		.aside .one a img {
+			transform: scale(0.6);
+			position: absolute;
+			top: -5px;
+			left: 3px;
+		}
+		.aside .one .word {
+			position: absolute;
+			top: 35px;
+			left: 14px;
+			font-size: 16px;
+			color: #fff;
+			font-weight: bold;
+		}
+		.aside .two {
+			background-color: #000;
+		}
+		.aside .two a img {
+			transform: scale(0.5);
+			position: absolute;
+			top: -5px;
+			left: 6px;
+		}
+		.aside .two .word {
+			position: absolute;
+			top: 35px;
+			left: 14px;
+			font-size: 16px;
+			color: #fff;
+			font-weight: bold;
+		}
+
+	</style>
+</head>
+<body>
+	<div class="container">
+		<div class="header">
+			<div class="wrap">
+				<div class="header-top">
+					<div class="top-and">
+						<div class="top-1">
+							<ul>
+								<li><a class="one" href="#">登录</a></li>
+								<li><a class="two" href="file:///F:/%E4%BD%9C%E4%B8%9A/%E5%90%95%E6%95%8F%20%201506024211/1-signin.html">注册</a></li>
+							</ul>
+						</div>
+						<div class="top-2">
+							<ul>
+								<li><a class="one" href="#">我的购物车</a>
+									<div class="tip">
+										<div class="little-box"></div>
+										<div class="p">
+											<p>购物车还没有商品，赶紧选购吧！</p>
+										</div>
+									</div>
+								</li>
+							</ul>
+						</div>
+						<div class="top-3">
+							<ul>
+								<li><a class="one" href="#">我的收藏夹</a></li>
+							</ul>
+						</div>
+						<div class="top-4">
+							<ul>
+								<li><a class="one" href="#">搜索店铺</a></li>
+							</ul>
+						</div>
+						<div class="top-5">
+							<ul>
+								<li><a class="one" href="#">中国</a>
+									<div class="two">
+										<ul>
+											<li style="background-color: #f1f2ed"><a href="#">中国</a></li>
+											<li><a href="#">中国香港（英文）</a></li>
+											<li><a href="#">中国台湾（繁体中文）</a></li>
+											<li><a href="#">法国</a></li>
+											<li><a href="#">德国</a></li>
+											<li><a href="#">英国</a></li>
+											<li><a href="#">澳大利亚</a></li>
+											<li><a href="#">奥地利</a></li>
+											<li><a href="#">爱尔兰</a></li>
+										</ul>
+									</div>
+								</li>
+							</ul>
+							
+						</div>
+						<div class="top-6">
+							<div class="icon">
+								<a href="#"><i class="fa fa-search"></i></a>
+							</div>
+							<div class="input">
+								<input class="email" type="text" placeholder="搜索VANS">
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="header-middle">
+					<div class="word">
+						<ul>
+							<li><a href="#">新品</a></li>
+							<li><a href="#">经典款</a></li>
+							<li><a href="#">职业滑板系列</a></li>
+						</ul>
+					</div>
+				</div>
+				<div class="header-bottom">
+					<div class="logo">
+						<a href="file:///E:/briup/products-vans/2-index.html#"><img src="./image/logo.gif" alt="..."></a>
+					</div>
+					<div class="nav">
+						<ul>
+							<li class="one">
+								<a class="email" href="#">关于VANS</a>
+								<div class="tips">
+									<ul>
+										<li>
+											<a class="email" href="#">THIS IS OFF THE WALL</a>
+										</li>
+										<li>
+											<a href="#">新闻</a>
+										</li>
+									</ul>
+								</div>
+							</li>
+							<li class=two>
+								<a href="#">运动员</a>
+								<div class="tips-2">
+									<ul>
+										<li><a href="#">中国运动员</a></li>
+										<li><a href="#">全球运动员</a></li>
+									</ul>
+								</div>
+							</li>
+							<li class="three">
+								<a class="email" href="#">HOUSE OF VANS</a>
+								<div class="tips-3">
+									<ul>
+										<li><a class="email" href="#">关于HOUSE OF VANS</a></li>
+										<li><a href="#">滑板</a></li>
+										<li><a href="#">艺术</a></li>
+										<li><a href="#">音乐</a></li>
+										<li><a href="#">街头文化</a></li>
+									</ul>
+									<ul>
+										<li><a class="email" href="#">2018 HOUSE OF VANS首站登陆成都</a></li>
+										<li><a href="#">VANS 职业公园滑板赛</a></li>
+										<li><a href="#">CUSTOM CULTURE</a></li>
+										<li><a href="#">VANS 音乐人征集活动拉开帷幕</a></li>
+										<li><a class="email" href="#">HOUSE OF VANS WORKSHOP</a></li>
+									</ul>
+								</div>
+							</li>
+							<li class="four">
+								<a href="#">男子</a>
+								<div class="tips-4">
+									<ul>
+										<li><a href="#">鞋款</a></li>
+										<li><a href="#">服装</a></li>
+										<li><a href="#">配件</a></li>
+										<li><a href="#">每周精选</a></li>
+									</ul>
+								</div>
+							</li>
+							<li class="five">
+								<a href="#">女子</a>
+								<div class="tips-5">
+									<ul>
+										<li><a href="#">鞋款</a></li>
+										<li><a href="#">服装</a></li>
+										<li><a href="#">配件</a></li>
+										<li><a href="#">每周精选</a></li>
+									</ul>
+								</div>
+							</li>
+							<li class="six"><a class="email" href="#">CUSTOMS</a></li>
+							<li class="seven"><a class="email" href="#">VAULT BY VANS</a></li>
+							<li class="eight"><a href="#">职业鞋款</a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="middle">
+			<div class="middle-top"></div>
+			<div class="wrap">
+				<div class="lunbo">
+					<ul>
+						<li><a class="lunbo1" href="#">
+							<img src="./image/lunbo1.jpg" alt="">
+						</a></li>
+						<li><a class="lunbo2" href="#">
+							<img src="./image/lunbo2.jpg" alt="">
+						</a></li>
+						<li><a class="lunbo3" href="#">
+							<img src="./image/lunbo3.jpg" alt="">
+						</a></li>
+						<li><a class="lunbo4" href="#">
+							<img src="./image/lunbo4.jpg" alt="">
+						</a></li>
+					</ul>
+				</div>
+				<div class="photo">
+					<ul>
+						<li class="photo-1">
+							<a class="photo1" href="#">
+								<img src="./image/photo1.jpg" alt="">
+							</a>
+							<div class="black">
+								<h2 class="title3">男子</h2>
+								<ul>
+									<li><a href="#">鞋款</a></li>
+									<li><a href="">服装</a></li>
+									<li><a href="">配件</a></li>
+									<li><a href="">每周精选</a></li>
+								</ul>
+							</div>
+						</li>
+						<li class="photo-2">
+							<a class="photo2" href="#">
+								<img src="./image/photo2.jpg" alt="">
+							</a>
+							<div class="black">
+								<h2 class="title3">女子</h2>
+								<ul>
+									<li><a href="#">鞋款</a></li>
+									<li><a href="">服装</a></li>
+									<li><a href="">配件</a></li>
+									<li><a href="">每周精选</a></li>
+								</ul>
+							</div>
+						</li>
+						<li class="photo-3">
+							<a class="photo3" href="#">
+								<img src="./image/photo3.jpg" alt="">
+							</a>
+							<div class="black">
+								<h2 class="title3">职业鞋款</h2>
+								<ul>
+									<li><a href="#">职业滑板系列</a></li>
+								</ul>
+							</div>
+						</li>
+					</ul>
+				</div>
+				<div class="news">
+					<div>
+						<span><h1 class="newtitle">近期新闻</h1></span>
+					</div>
+					<div class="newsword">
+						<ul>
+							<li class="news1">
+								<div class="news-1">
+									<a href="#">
+										<img src="./image/news1.jpg" alt="">
+										<h3>VAULT BY VANS CUT & PASTE 发售规则</h3>
+									</a>
+									<p>VAULT BY VANS CUT & PASTE 发售规则</p>
+									<h4>2018-8-3</h4>
+									<a class="a2" href="#">阅读更多</a>
+								</div>
+							</li>
+							<li class="news2">
+								<div class="news-2">
+									<a href="#">
+										<img src="./image/news2.jpg" alt="">
+										<h3>2018 Vans 职业公园滑板赛亚洲洲际锦标赛再战新加坡</h3>
+									</a>
+									<p>比赛现在面向所有亚洲地区男女滑手开放报名</p>
+									<h4>2018-7-30</h4>
+									<a class="a2" href="#">阅读更多</a>
+								</div>
+							</li>
+							<li class="news3">
+								<div class="news-3">
+									<a href="#">
+										<img src="./image/news3.jpg" alt="">
+										<h3>VANS全球职业滑手TNT将于7月21日空降上海鞋测活动现场！</h3>
+									</a>
+									<p>锁定7月21日，下午4点开始，和TNT一起，体验这次爆燃的鞋测活动！</p>
+									<h4>2018-7-24</h4>
+									<a class="a2" href="#">阅读更多</a>
+								</div>
+							</li>
+							<li class="news4">
+								<div class="news-4">
+									<a href="#">
+										<img src="./image/news4.jpg" alt="">
+										<h3>VANS中国职业滑手胡天祐推出个人滑板短片！</h3>
+									</a>
+									<p>先睹为快</p>
+									<h4>2018-7-19</h4>
+									<a class="a2" href="#">阅读更多</a>
+								</div>
+							</li>
+						</ul>
+					</div>
+				</div>
+				<div class="yue">
+					<div class="du">
+						<a href="#">阅读更多</a>
+					</div>
+				</div>
+				<div class="m-bottom">
+					<div class="m-b-word">
+						<h1>OFF THE WALL!</h1>
+					</div>
+					<div class="m-picture">
+						<ul>
+							<li class="picture1">
+								<a class="picture-1" href="#">
+									<img src="./image/bottom1.jpg" alt="">
+									<a class="m-word" href="#">滑板</a>
+								</a>
+							</li>
+							<li class="picture2">
+								<a href="#" class="picture-2">
+									<img src="./image/bottom2.jpg" alt="">
+									<a class="m-word" href="#">艺术</a>
+								</a>
+							</li>
+							<li class="picture3">
+								<a class="picture-3" href="#">
+									<img src="./image/bottom3.jpg" alt="">
+									<a class="m-word" href="#">音乐</a>
+								</a>
+							</li>
+							<li class="picture4">
+								<a class="picture-4" href="#">
+									<img src="./image/bottom4.jpg" alt="">
+									<a class="m-word" href="#">街头文化</a>
+								</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="footer">
+			<div class="wrap">
+				<div class="footer-content">
+					<div class="one">
+						<span><h3 class="title">获取帮助</h3></span>
+						<ul class="list-one">
+							<li class="bold">购物</li>
+							<li><a href="#">男子</a></li>
+							<li><a href="#">女子</a></li>
+							<li class="email"><a href="#">CUSTOMS</a></li>
+							<li class="email"><a href="#">Vault by Vans</a></li>
+							<li><a href="#">职业鞋款</a></li>
+							<li><a href="#">查找店铺</a></li>
+						</ul>
+						<ul class="list-two">
+							<li class="bold">公司</li>
+							<li><a href="#">客户服务</a></li>
+							<li><a href="#">使用条款</a></li>
+							<li><a href="#">隐私政策</a></li>
+							<li><a href="#">可持续发展</a></li>
+						</ul>
+					</div>
+					<div class="two">
+						<span><a class="title" href="#">联系我们</a></span>
+						<ul class="list-three">
+							<li><a  class="bold" href="#">电子邮件</a></li>
+							<li class="email">contactus@vans.com.cn</li>
+						</ul>
+						<ul class="list-four">
+							<li><a  class="bold" href="#">地址</a></li>
+							<li><a href="#">中国上海市南京西路688号8楼</a></li>
+						</ul>
+					</div>
+					<div class="three">
+						<span><a class="title" href="#">订阅</a></span>
+						<li class="word">订阅以获取最新资讯</li>
+						<div class="input">
+							<div class="icon">
+								<a href="#"><i class="fa fa-angle-right"></i></a>
+							</div>
+							<div class="inputbox">
+								<input type="text" placeholder="电子邮件">
+							</div>
+						</div>
+						<a class="title2" href="#">在这些地方找到我们</a>
+						<ul class="icons">
+							<li class="icon1">
+								<a class="webchat" href="#">
+									<img src="./image/webchat.png" alt="">
+								</a>
+							</li>
+							<li class="icon2">
+								<a class="weibo" href="#">
+									<img src="./image/weibo.png" alt="">
+								</a>
+							</li>
+							<li class="icon3">
+								<a class="n" href="#">
+									<img src="./image/n.png" alt="">
+								</a>
+							</li>
+							<li class="icon4">
+								<a class="tengxun" href="#">
+									<img src="./image/teng.png" alt="">
+								</a>
+							</li>
+							<li class="icon5">
+								<a class="ins" href="#">
+									<img src="./image/ins.png" alt="">
+								</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+				<div class="footer-foot">
+					<div class="foot-1">
+						<img src="./image/footer-1.gif" alt="">
+					</div>
+					<div class="foot-2">
+						<div class="one">
+							<a class="email" href="#">苏ICP备13010219号</a>
+							<span class="words">工信部网站威富服饰（中国）有限公司</span>
+						</div>
+						<div class="two">
+							<a class="word-title" href="#">中国
+								<img src="./image/down.png" alt="">
+							</a>
+							<ul class="word-tip">
+								<li style="background-color: #f1f2ed"><a href="#">中国</a></li>
+								<li><a href="#">中国香港（繁体中文）</a></li>
+								<li><a href="#">中国香港（英语）</a></li>
+								<li><a href="#">中国台湾</a></li>
+								<li><a href="#">阿根廷</a></li>
+								<li><a href="#">爱尔兰</a></li>
+								<li><a href="#">奥地利</a></li>
+								<li><a href="#">澳大利亚</a></li>
+								<li><a href="#">巴西</a></li>
+								<li><a href="#">法国</a></li>
+								<li><a href="#">德国</a></li>
+								<li><a href="#">英国</a></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="aside">
+			<ul>
+				<li class="one">
+					<a href="#">
+						<img src="./image/ear.png" alt="">
+						<p class="word">客服</p>
+					</a>
+				</li>
+				<li class="two">
+					<a href="#">
+						<img src="./image/top.png" alt="">
+						<p class="word">置顶</p>
+					</a>
+				</li>
+			</ul>
+		</div>
+	</div>
+</body>
+</html>
